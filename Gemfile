@@ -17,12 +17,14 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'　
+gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-#gem 'turbolinks', '~> 5'　# 使うかもしれないから削除しないけど悩む （Logiccs)
+#gem 'turbolinks', '~> 5'# 使うかもしれないから削除しないけど悩む （Logiccs)
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
-# Bootstrapを追加（Logiccs)
+gem 'jbuilder', '~> 2.0' #2.5から修正
+# bundle exec rake doc:rails generators the API under doc/api
+gem 'sdoc', '~>0.4.0', group: :doc 
+# 'sdoc'とbootstrapを追加
 gem 'bootstrap-sass'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
