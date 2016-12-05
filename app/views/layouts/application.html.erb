@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Logiccs</title>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <title>LOGICCS</title>
+    <%= stylesheet_link_tag 'application' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
-
   <body>
-    <%= render 'layouts/header' %> 
+    <%= render 'layouts/header' %>
     <div class="container">
-     <%= yield %>
+      <%= yield %>
     </div>
   </body>
 </html>

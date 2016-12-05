@@ -3,8 +3,9 @@
 
 /* universal */
 
+/*HPヘッダーから、中央の文字までの距離*/
 body {
-    padding-top: 60px;
+    padding-top: 250px; 
 }
 
 section {
@@ -19,30 +20,35 @@ textarea {
     text-align: center;
 }
 
+/*HPフッターから、中央の文字までの距離*/
 .center h1 {
     margin-bottom: 10px;
 }
 
 /* typography */
 
+/* 本文中の行間 */
 h1, h2, h3, h4, h5, h6 {
     line-height: 1;
 }
 
 h1 {
-    font-size: 3em;
+    font-family: Garamond;
+    font-size: 7em;
     letter-spacing: -2px;
     margin-bottom: 30px;
     text-align: center;
+    color: #ffd770;
 }
 
 h2 {
-    font-size: 1.2em;
+    font-family: Garamond;
+    font-size: 4em;
     letter-spacing: -1px;
     margin-bottom: 30px;
     text-align: center;
     font-weight: normal;
-    color: #777;
+    color: #ffd770;
 }
 
 p {
@@ -50,13 +56,15 @@ p {
     line-height: 1.7em;
 }
 
+
+
 /* header */
 
 #logo {
     float: left;
     margin-right: 10px;
     font-size: 1.7em;
-    color: #fff;
+    color: #ffd770;
     text-transform: uppercase;
     letter-spacing: -1px;
     padding-top: 9px; 
@@ -67,3 +75,4 @@ p {
     color: #fff;
     text-decoration: none;
 }
+
