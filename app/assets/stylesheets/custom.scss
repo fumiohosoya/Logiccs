@@ -29,29 +29,28 @@ textarea {
 
 /* 本文中の行間 */
 h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia; 
     line-height: 1;
 }
 
 h1 {
-    font-family: Garamond;
     font-size: 7em;
     letter-spacing: -2px;
     margin-bottom: 30px;
     text-align: center;
-    color: #ffd770;
+    color: #ffd700;
 }
 
 h2 {
-    font-family: Garamond;
     font-size: 4em;
     letter-spacing: -1px;
     margin-bottom: 30px;
     text-align: center;
     font-weight: normal;
-    color: #ffd770;
+    color: #ffd700;
 }
 
-p {
+p { 
     font-size: 1.1em;
     line-height: 1.7em;
 }
@@ -61,6 +60,7 @@ p {
 /* header */
 
 #logo {
+    font-family: Georgia;
     float: left;
     margin-right: 10px;
     font-size: 1.7em;
@@ -72,6 +72,7 @@ p {
 }
 
 #logo:hover {
+    font-family: Georgia;
     color: #fff;
     text-decoration: none;
 }
