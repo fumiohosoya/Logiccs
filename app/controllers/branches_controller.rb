@@ -50,7 +50,7 @@ class BranchesController < ApplicationController
         @branch = Branch.new(branch_params)
         if @branch.save
          flash[:success] = "Welcome to LOGICCS !"    
-         redirect_to admin_path
+         redirect_to adminpanel_url
         else
          flash[:danger] = "regist failed !"    
          render 'new'

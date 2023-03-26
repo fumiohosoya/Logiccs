@@ -13,7 +13,8 @@ class DealerbranchesController < ApplicationController
         @Dealerbranch = Dealerbranch.new(dealerbranch_params)
         if @Dealerbranch.save
          flash[:success] = "Branch added !"    
-         redirect_to admin_path
+         redirect_to adminpanel_url
+
         else
          render 'new'
         end 
@@ -33,7 +34,7 @@ class DealerbranchesController < ApplicationController
         
         if (@dealerbranch.save)
             flash[:success] = "Update Succeeded"
-            redirect_to admin_path
+            redirect_to adminpanel_url
         else
             flash[:error] = "Update failed"
             render :edit

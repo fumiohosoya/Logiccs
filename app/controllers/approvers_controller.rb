@@ -16,7 +16,7 @@ class ApproversController < ApplicationController
         @approver = Approver.new(approver_params)
         if (@approver.save)
             flash[:alert] = "Approver Registration Succeeded"
-            redirect_to admin_path
+            redirect_to adminpanel_url
 
         else
             flash[:alert] = "Approver Registration Failed"
@@ -27,7 +27,7 @@ class ApproversController < ApplicationController
     def update
         @ap_person = Approver.find(params[:id])
         if (@ap_person.update(approver_params))
-                redirect_to admin_path
+                redirect_to adminpanel_url
         else
             render :edit
         end
@@ -36,7 +36,7 @@ class ApproversController < ApplicationController
     def destroy
         @approver = Approver.find(params[:id])
         @approver.destroy if (@approver)
-        redirect_to admin_path
+        redirect_to adminpanel_url
     end
         
     

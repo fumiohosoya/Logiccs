@@ -16,7 +16,7 @@ class DealerusersController < ApplicationController
     @dealeruser = Dealeruser.new(dealeruser_params)
     if @dealeruser.save
       session[:user_id] = @dealeruser.id
-      redirect_to admin_path, notice: "登録完了"
+      redirect_to adminpanel_url, notice: "登録完了"
     else
       @companies = Dealercompany.preload(:dealerbranches)
       @branches =  (@dealeruser != nil) ? Dealerbranch.where(dealercompany_id: @dealeruser.dealercompany_id) : {}

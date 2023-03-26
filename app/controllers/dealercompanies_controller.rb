@@ -12,7 +12,7 @@ class DealercompaniesController < ApplicationController
         @dealercompany = Dealercompany.new(dealercompany_params)
         if @dealercompany.save
          flash[:success] = "Welcome to LOGICCS !"    
-         redirect_to admin_path
+         redirect_to adminpanel_url
         else
          render 'new'
         end 
@@ -32,7 +32,7 @@ class DealercompaniesController < ApplicationController
         
         if (@dealercompany.save)
             flash[:success] = "Update Succeeded"
-            redirect_to admin_path
+            redirect_to adminpanel_url
         else
             flash[:error] = "Update failed"
             render :edit

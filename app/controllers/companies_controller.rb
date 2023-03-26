@@ -12,7 +12,7 @@ class CompaniesController < ApplicationController
         @company = Company.new(company_params)
         if @company.save
          flash[:success] = "Welcome to LOGICCS !"    
-         redirect_to admin_path
+         redirect_to adminpanel_url
         else
          render 'new'
         end 
