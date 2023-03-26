@@ -1,0 +1,32 @@
+<% if !tireadmin.persisted? %>
+  <% urlpath = createtireadmin_path %>
+<% else %>
+  <% urlpath = updatetireadmin_path(tireadmin.id) %>
+<% end %>
+    <%= form_for(tireadmin, url: urlpath) do |f| %>
+
+      <%= f.collection_select(:company_id, @companies, :id, :name_e,  
+        {:include_blank => "Please Select"},
+        {:onchange => "update_branchFortireadmin(this.value, 'tireadmin')"} ) %>
+
+
+      <%= f.label :branch_id, class:"label label-danger width100" %>
+          <div id="branch_select">
+            <%= render partial:'admin/branch_menu', locals:{obj: :tireadmin, branches: @branches } %>
+          </div>
+          
+      <%= f.label :name, class:'control-label white' %>
+      <%= f.text_field :name, class:'form-control' %>
+
+      <%= f.label :email, class:'control-label white' %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password, class:'control-label white' %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+
+      <%= f.label :password_confirm, class:'control-label white' %>
+      <%= f.password_field :password_confirm, class: 'form-control' %>
+
+      <%= f.submit "Add New Admin User", class: "btn btn-primary" %>
+    <% end %>

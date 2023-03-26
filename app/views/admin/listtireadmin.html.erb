@@ -1,0 +1,36 @@
+<div class="row">
+ <div class="col-md-8 col-md-offset-2 table-responsive">
+     <table class="table table-striped table-bordered table-hover">
+        <thead>
+         <tr>
+             <th class="logiccs_table">Sytem-id</th>
+             <th class="logiccs_table">Company</th>
+             <th class="logiccs_table">Branch</th>
+             <th class="logiccs_table">Name</th>
+             <th class="logiccs_table">Email</th>
+             <th class="logiccs_table">Operation</th>
+         </tr>
+        </thead>
+        <tbody>
+            <% @tireadmins.each do |user| %>
+            <tr class="bgwhite">
+                <td> <%= user.id %></td>
+                <td> <%= user.company.name_e %></td>
+                <td> <%= user.branch.name %></td>
+                <td> <%= user.name %></td>
+                <td> <%= user.email %></td>
+                <td>
+                  <%= link_to "Edit", edittireadmin_path(user.id), class:"btn btn-success btn-xs" %>
+                  <%= link_to "Delete", deletetireadmin_path(user.id), method: 'delete', class:"btn btn-danger btn-xs" %>
+                </td>
+            </tr>
+            <% end %>
+            
+        </tbody>
+         
+         
+         
+         
+     </table>
+  </div>
+</div>

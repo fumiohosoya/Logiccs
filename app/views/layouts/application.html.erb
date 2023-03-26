@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Logiccstemp</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <head>
+        <title>Logiccs</title>
+         <%= csrf_meta_tags %>
+         
+         <%= stylesheet_link_tag 'application', media: 'all' %>
+         <%= javascript_include_tag 'application' %>
+         <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>-->
+         <!--<script src="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/v4.0.0/src/js/bootstrap-datetimepicker.js"></script>-->
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+     </head>
+     
+     <% bodyclass = controller.controller_name + "_" + controller.action_name %>
+     <body class="<%= bodyclass %>">
+       <%= render 'layouts/header' %>
+        <div class="container application_yield">
+         <%= render 'layouts/flash_messages' %>
+    
+          <%= yield %>
+        </div>
+     </body>
 </html>

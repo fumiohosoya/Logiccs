@@ -2,14 +2,49 @@
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
  *
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
  *
+ *= require bootstrap-datetimepicker
  *= require_tree .
  *= require_self
  */
+
+body.static_pages_home a {
+    color: #ffd700;
+}
+
+body.dealerusers_show .logitable a {
+    color: #ffffff;
+}
+
+span.notice_loginote {
+    background-color: yellow;
+    color: #000;
+}
+
+table.logitable {
+    background-color: #ddd;
+    color: #333;
+}
+
+div.alert {
+    background-color: white;
+}
+
+div.inline {
+    display:inline;
+}
+
+.bgwhite {
+    background-color: white;
+}
+
+.bgpink {
+    background-color: pink;
+}

@@ -1,0 +1,65 @@
+<%= link_to "Back to Karte", karte_path(@trailer), class:"btn btn-danger" %>
+
+<%= render "adhoc_trailer_rts/modal", truck: @trailer %>
+
+<%= render 'trailertable', trailer: @trailer %>
+
+<div class="row bgwhite"> 
+   <ul class="nav nav-tabs nav-justified mb-3">
+      <li class="nav-item"><%= link_to "Rotation A", karte_trailer_path(@trailer), class:"nav-link" %></li>
+      <li class="nav-item"><%= link_to "Rotation B", "#", class:"nav-link active bgpink" %></li>
+    </ul>
+</div>
+
+<div class="row" id="rotation">
+
+
+　　    　　<h2>Tire Rotation B</h2>
+
+  <div class="logiccs_table">
+ 　　    　　
+　　</div>    　　
+  <div class="adhocrotations col-xs-8">
+    <ul class="text-center">
+      <li>Operation</li>
+      <li>A<br>depth Mid<br>depth Side<br>purchase</li>
+      <li>B<br>depth Mid<br>depth Side<br>purchase</li>
+      <li>C<br>depth Mid<br>depth Side<br>purchase</li>
+      <li>D<br>depth Mid<br>depth Side<br>purchase</li>
+      <li>E<br>depth Mid<br>depth Side<br>purchase</li>
+      <li>F<br>depth Mid<br>depth Side<br>purchase</li>
+      <li>G<br>depth Mid<br>depth Side<br>purchase</li>
+      <li>H<br>depth Mid<br>depth Side<br>purchase</li>
+      <li>I<br>depth Mid<br>depth Side<br>purchase</li>
+      <% if @trailer.wheels != "8" && @trailer.wheels != "FULL" %>
+          <li>J<br>depth Mid<br>depth Side<br>purchase</li>
+          <li>K<br>depth Mid<br>depth Side<br>purchase</li>
+          <li>L<br>depth Mid<br>depth Side<br>purchase</li>
+          <li>M<br>depth Mid<br>depth Side<br>purchase</li>
+      <% end %>
+    </ul>
+    
+    <%= render 'karteB_sub', {trailer: @trailer, number: 1} %>
+    <%= render 'karteB_sub', {trailer: @trailer, number: 2} %>
+    <%= render 'karteB_sub', {trailer: @trailer, number: 3} %>
+    <%= render 'karteB_sub', {trailer: @trailer, number: 4} %>
+    <%= render 'karteB_sub', {trailer: @trailer, number: 5} %>
+    
+    
+  
+    
+  </div>
+  <% rot_ar = makearray_Brotation(@trailer) %>
+  <div class="col-xs-4">
+    
+    <% if @trailer.wheels == "8" %>
+       <%= render "rotationB_8_sub", rot_ar: rot_ar %>
+    <% elsif @trailer.wheels == "12" %>
+       <%= render "rotationB_12_sub", rot_ar: rot_ar %>
+    <% elsif @trailer.wheels == "FULL" %>
+       <%= render "rotationB_full_sub", rot_ar: rot_ar %>
+    <% end %>
+  </div>
+
+
+</div>
