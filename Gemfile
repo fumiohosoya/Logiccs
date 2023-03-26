@@ -6,7 +6,14 @@ ruby '2.5.9'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+group :development do
+  gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+end
+
+group :production do
+  gem 'pg', '~> 0.18'
+end
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -50,3 +57,25 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+gem 'carrierwave'
+
+gem 'execjs'
+gem 'therubyracer'
+
+gem 'rmagick'
+
+gem 'kaminari', '~> 0.17.0'
+
+gem 'dotiw', '~>3.1.1'
+
+gem 'wkhtmltopdf-binary', group: :production
+gem 'wicked_pdf'
+gem 'rails_12factor', group: :production
+#gem 'fog'
+
+gem 'dotenv-rails'
+
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'

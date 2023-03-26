@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: Logiccstemp_production
-  username: Logiccstemp
-  password: <%= ENV['LOGICCSTEMP_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
