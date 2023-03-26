@@ -51,7 +51,11 @@
     
     <div class="row">
         <div class="col-xs-6">
-         <%= image_tag @truck.image, :size => '570x380' %>
+         <% if @truck.image && @truck.image.url %>
+          <%= image_tag @truck.image.url, :size => '570x380' %>
+         <% else %>
+          <%= image_tag '/images/noTruckImage.png', :size => '560x360' %>
+         <% end %>
         </div>
         <div class="col-xs-6" style="background:white; color:black">
           <div class="notebox">
