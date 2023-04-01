@@ -68,6 +68,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'carrierwave'
+gem 'cloudinary'
 
 gem 'execjs'
 gem 'therubyracer'
