@@ -7,7 +7,8 @@ ruby '2.5.9'
 gem 'rails', '~> 5.2.6'
 # Use mysql as the database for Active Record
 group :development do
-  gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+#  gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+  gem 'dotenv-rails'
 end
 
 gem 'sqlite3', '~> 1.3.0', group: :development
@@ -83,6 +84,7 @@ gem 'wkhtmltopdf-binary', group: :production
 gem 'wicked_pdf'
 gem 'rails_12factor', group: :production
 #gem 'fog'
+gem 'fog-aws'
 
 gem 'dotenv-rails'
 

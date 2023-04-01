@@ -90,8 +90,25 @@ GEM
       actionpack (>= 3)
       i18n
     erubi (1.12.0)
+    excon (0.99.0)
     execjs (2.8.1)
     ffi (1.15.5)
+    fog-aws (3.18.0)
+      fog-core (~> 2.1)
+      fog-json (~> 1.1)
+      fog-xml (~> 0.1)
+    fog-core (2.3.0)
+      builder
+      excon (~> 0.71)
+      formatador (>= 0.2, < 2.0)
+      mime-types
+    fog-json (1.2.0)
+      fog-core
+      multi_json (~> 1.10)
+    fog-xml (0.1.4)
+      fog-core
+      nokogiri (>= 1.5.11, < 2.0.0)
+    formatador (1.1.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
     http-accept (1.7.0)
@@ -140,7 +157,7 @@ GEM
     momentjs-rails (2.29.4.1)
       railties (>= 3.1)
     msgpack (1.6.1)
-    mysql2 (0.5.5)
+    multi_json (1.15.0)
     net-imap (0.2.2)
       digest
       net-protocol
@@ -280,13 +297,13 @@ DEPENDENCIES
   dotenv-rails
   dotiw (~> 3.1.1)
   execjs
+  fog-aws
   jbuilder (~> 2.5)
   jquery-rails
   jquery-ui-rails
   kaminari (~> 0.17.0)
   listen (>= 3.0.5, < 3.2)
   momentjs-rails (>= 2.9.0)
-  mysql2 (>= 0.4.4, < 0.6.0)
   pg (~> 0.18)
   puma (~> 3.11)
   rails (~> 5.2.6)
