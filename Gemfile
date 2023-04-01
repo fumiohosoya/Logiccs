@@ -5,6 +5,9 @@ ruby '2.5.9'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6'
+
+gem "activerecord", ">= 5.2.8.1"
+
 # Use mysql as the database for Active Record
 group :development do
 #  gem 'mysql2', '>= 0.4.4', '< 0.6.0'
