@@ -4,7 +4,8 @@ class TrailerrelationshipsController < ApplicationController
         @user = User.find(params[:trailerrelationship][:user_id])
         @user.trailer_add(params[:trailerrelationship][:trailer_id])
      #   redirect_to @user
-        redirect_to :back 
+        redirect_back( fallback_location: root_path )
+
     end
     
     def destroy
@@ -12,6 +13,6 @@ class TrailerrelationshipsController < ApplicationController
         t = Trailerrelationship.find(params[:id])
         t.destroy if (t != nil)
      #   return redirect_to @user if @user !=nil
-        redirect_to :back 
+        redirect_back( fallback_location: root_path )
     end
 end
