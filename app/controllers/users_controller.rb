@@ -4,6 +4,11 @@ class UsersController < ApplicationController
   
   before_action :adminlogged_in_user, only:[:adminsetuser]
 
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy if @user
+    redirect_back(fallback_location: root_url)
+  end
 
   def index
     @users = User.all.order(:company_id, :name)
