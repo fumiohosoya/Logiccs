@@ -38,10 +38,10 @@ class AdhocTruckRtsController < ApplicationController
     def update
         
         @adhoc_tire = AdhocTruckRt.find(params[:id])
-        
+        @truck = @adhoc_tire.truck
+
         if (@adhoc_tire.update(tire_params))
             flash[:success] = "Tirelist Updated"
-            @truck = @adhoc_tire.truck
             redirect_to adhoc_truck_rt_url(@truck)
         else
             flash[:error] = "Tirelist Failed to update"

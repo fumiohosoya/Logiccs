@@ -15,8 +15,6 @@
  *= require_self
  */
  
-@import "~bootstrap/scss/bootstrap";
-@import "~tempusdominus-bootstrap-4/src/sass/tempusdominus-bootstrap-4";
 
 body.static_pages_home a {
     color: #ffd700;
