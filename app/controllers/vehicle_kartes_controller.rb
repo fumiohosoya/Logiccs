@@ -1,4 +1,6 @@
 class VehicleKartesController < ApplicationController
+    
+    before_action :logged_in_user
 
     def vehicle_karte
     end

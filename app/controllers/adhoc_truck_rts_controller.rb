@@ -7,7 +7,9 @@ class AdhocTruckRtsController < ApplicationController
     def show
         tireadminlogged_in?
         
+        
         @truck = Truck.find(params[:id])
+        is_under_mycontrol?(@truck)
         @tirerotations = @truck.adhocTruckRts.order("created_at")
     end
     
@@ -20,6 +22,7 @@ class AdhocTruckRtsController < ApplicationController
 #        @truck = Truck.find()
         @truck = Truck.find(params[:truck_id])
         @truck_tire = @truck.adhocTruckRts.build(tire_params)
+        
         if (@truck_tire.save)
             flash[:success] = "Tire Rotation Saved"
             redirect_to adhoc_truck_rt_url(@truck)
@@ -39,6 +42,7 @@ class AdhocTruckRtsController < ApplicationController
         
         @adhoc_tire = AdhocTruckRt.find(params[:id])
         @truck = @adhoc_tire.truck
+
 
         if (@adhoc_tire.update(tire_params))
             flash[:success] = "Tirelist Updated"
@@ -73,6 +77,14 @@ class AdhocTruckRtsController < ApplicationController
             :tire12sn, :tire12depthmiddle, :tire12depthside, :tire12purchase,
             :tire13sn, :tire13depthmiddle, :tire13depthside, :tire13purchase,
         )
+     end
+     
+          
+     def is_under_mycontrol?(truck)
+         unless  truck.users.include?(current_user)
+             redirect_to current_user
+         end
+         
      end
     
 end
