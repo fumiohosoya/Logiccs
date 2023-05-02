@@ -24,3 +24,8 @@
 .adhocrotations_modal {
     width: 90%!important;
 }
+
+.bg-tiregrey {
+    background-color: #777;
+    color: #fff;
+}

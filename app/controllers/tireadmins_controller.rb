@@ -38,18 +38,12 @@ class TireadminsController < ApplicationController
     @user = Tireadmin.find(params[:id])
     @companies = Company.all
     @branches = (@user != nil) ? Branch.where(company_id: @user.company_id) : {}
-    @mytrucks = @user.trucks
-    @othertrucks = Truck.where(company_id: @user.company_id, branch_id: @user.branch_id) - @mytrucks
+    @mytrucks = Truck.where(company_id: @user.company_id, branch_id: @user.branch_id)
 
-    @mytrailers = @user.trailers
-    @othertrailers = Trailer.where(company_id: @user.company_id, branch_id: @user.branch_id) - @mytrailers
+#    @mytrailers = @user.trailers
+    @mytrailers = Trailer.where(company_id: @user.company_id, branch_id: @user.branch_id)
   end
 
-  
-  def destroy
-    session[:tireadminuser_id] = nil
-    redirect_to root_path
-  end
 
   private
   

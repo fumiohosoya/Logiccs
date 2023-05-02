@@ -81,7 +81,7 @@ class AdhocTruckRtsController < ApplicationController
      
           
      def is_under_mycontrol?(truck)
-         unless  truck.users.include?(current_user)
+         unless  tireadminlogged_in? || truck.users.include?(current_user)
              redirect_to current_user
          end
          

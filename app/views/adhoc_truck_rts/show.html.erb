@@ -1,7 +1,7 @@
-<%= link_to "Back to Karte", karte_path(@truck), class:"btn btn-danger" %>
+<%= link_to "Back to Karte", karte_path(@truck), class: "btn btn-danger" %>
 
 <%= render "adhoc_truck_rts/modal", truck: @truck %>
-<%# rot_ar = makearray_tire(@truck, @hist_ar)%>
+<% # rot_ar = makearray_tire(@truck, @hist_ar) %>
 <div class="row" id="rotation">
   <h2>Tire Rotation B</h2>
 
@@ -16,7 +16,7 @@
           <td><%= @truck.number %></td><td><%= @truck.maker %></td><td><%= @truck.wheels %></td>
           <td><%= @truck.engine %></td><td><%= @truck.body %></td><td><%= @truck.model %></td>
           <td><%= @truck.purchase %></td>
-          <td><% dates = distance_of_time_in_words_hash(Time.now, @truck.purchase) %><%= dates[:years].to_s+"Years "+dates[:months].to_s+"Month" %></td><td><%= @truck.last_mileage %></td><td><%= @truck.next_mileage %></td>
+          <td><% dates = distance_of_time_in_words_hash(Time.now, @truck.purchase) %><%= dates[:years].to_s + "Years " + dates[:months].to_s + "Month" %></td><td><%= @truck.last_mileage %></td><td><%= @truck.next_mileage %></td>
       </tbody>
     </table>        
   </div>  
@@ -41,414 +41,414 @@
     </ul>
     
     <ul>
-      <li><%= adhoc_lasttire(@truck, 1) %></li>
-      <% @tirelist =  get_adhoctire_data(@truck, 1) %>
-     <li><%= not_nill(@tirelist,"tire1sn") %><br>
-          <%= not_nill(@tirelist,"tire1depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire1depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire1purchase") %>
+      <li class="text-center bg-info"><%= adhoc_lasttire(@truck, 1) %></li>
+      <% @tirelist = get_adhoctire_data(@truck, 1) %>
+     <li><%= not_nill(@tirelist, "tire1sn") %><br>
+          <%= not_nill(@tirelist, "tire1depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire1depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire1purchase") %>
       </li>
-      <li><%= not_nill(@tirelist,"tire2sn") %><br>
-          <%= not_nill(@tirelist,"tire2depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire2depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire2purchase") %>
+      <li><%= not_nill(@tirelist, "tire2sn") %><br>
+          <%= not_nill(@tirelist, "tire2depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire2depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire2purchase") %>
       </li>
-      <li><%= not_nill(@tirelist,"tire3sn") %><br>
-          <%= not_nill(@tirelist,"tire3depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire3depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire3purchase") %>
+      <li><%= not_nill(@tirelist, "tire3sn") %><br>
+          <%= not_nill(@tirelist, "tire3depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire3depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire3purchase") %>
       </li>
-      <li><%= not_nill(@tirelist,"tire4sn") %><br>
-          <%= not_nill(@tirelist,"tire4depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire4depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire4purchase") %>
+      <li><%= not_nill(@tirelist, "tire4sn") %><br>
+          <%= not_nill(@tirelist, "tire4depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire4depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire4purchase") %>
       </li>
-      <li><%= not_nill(@tirelist,"tire5sn") %><br>
-          <%= not_nill(@tirelist,"tire5depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire5depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire5purchase") %>
+      <li><%= not_nill(@tirelist, "tire5sn") %><br>
+          <%= not_nill(@tirelist, "tire5depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire5depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire5purchase") %>
       </li>
       <% if @truck.wheels >= 6 %>
-      <li><%= not_nill(@tirelist,"tire6sn") %><br>
-          <%= not_nill(@tirelist,"tire6depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire6depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire6purchase") %>
+      <li><%= not_nill(@tirelist, "tire6sn") %><br>
+          <%= not_nill(@tirelist, "tire6depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire6depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire6purchase") %>
       </li>
-      <li><%= not_nill(@tirelist,"tire7sn") %><br>
-          <%= not_nill(@tirelist,"tire7depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire7depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire7purchase") %>
+      <li><%= not_nill(@tirelist, "tire7sn") %><br>
+          <%= not_nill(@tirelist, "tire7depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire7depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire7purchase") %>
       </li>
       <% end %>
       <% if @truck.wheels >= 10 %>
-      <li><%= not_nill(@tirelist,"tire8sn") %><br>
-          <%= not_nill(@tirelist,"tire8depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire8depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire8purchase") %>
+      <li><%= not_nill(@tirelist, "tire8sn") %><br>
+          <%= not_nill(@tirelist, "tire8depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire8depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire8purchase") %>
       </li>
-      <li><%= not_nill(@tirelist,"tire9sn") %><br>
-          <%= not_nill(@tirelist,"tire9depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire9depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire9purchase") %>
+      <li><%= not_nill(@tirelist, "tire9sn") %><br>
+          <%= not_nill(@tirelist, "tire9depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire9depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire9purchase") %>
       </li>
-      <li><%= not_nill(@tirelist,"tire10sn") %><br>
-          <%= not_nill(@tirelist,"tire10depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire10depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire10purchase") %>
+      <li><%= not_nill(@tirelist, "tire10sn") %><br>
+          <%= not_nill(@tirelist, "tire10depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire10depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire10purchase") %>
       </li>
-      <li><%= not_nill(@tirelist,"tire11sn") %><br>
-          <%= not_nill(@tirelist,"tire11depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire11depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire11purchase") %>
+      <li><%= not_nill(@tirelist, "tire11sn") %><br>
+          <%= not_nill(@tirelist, "tire11depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire11depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire11purchase") %>
       </li>
       <% end %>
     </ul>
     
     <ul>
-      <li><%= adhoc_lasttire(@truck, 2) %></li>
-      <% @tirelist =  get_adhoctire_data(@truck, 2) %>
+      <li class="text-center bg-info"><%= adhoc_lasttire(@truck, 2) %></li>
+      <% @tirelist = get_adhoctire_data(@truck, 2) %>
       <% prevtirelist = get_adhoctire_data(@truck, 1) %>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire1sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire1sn") ? "bgwhite" : "bgpink" %>
      <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire1sn") %><br>
-          <%= not_nill(@tirelist,"tire1depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire1depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire1purchase") %>
+          <%= not_nill(@tirelist, "tire1sn") %><br>
+          <%= not_nill(@tirelist, "tire1depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire1depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire1purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire2sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire2sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire2sn") %><br>
-          <%= not_nill(@tirelist,"tire2depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire2depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire2purchase") %>
+          <%= not_nill(@tirelist, "tire2sn") %><br>
+          <%= not_nill(@tirelist, "tire2depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire2depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire2purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire3sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire3sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire3sn") %><br>
-          <%= not_nill(@tirelist,"tire3depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire3depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire3purchase") %>
+          <%= not_nill(@tirelist, "tire3sn") %><br>
+          <%= not_nill(@tirelist, "tire3depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire3depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire3purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire4sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire4sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire4sn") %><br>
-          <%= not_nill(@tirelist,"tire4depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire4depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire4purchase") %>
+          <%= not_nill(@tirelist, "tire4sn") %><br>
+          <%= not_nill(@tirelist, "tire4depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire4depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire4purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire5sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire5sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire5sn") %><br>
-          <%= not_nill(@tirelist,"tire5depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire5depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire5purchase") %>
+          <%= not_nill(@tirelist, "tire5sn") %><br>
+          <%= not_nill(@tirelist, "tire5depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire5depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire5purchase") %>
       </li>
       <% if @truck.wheels >= 6 %>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire6sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire6sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire6sn") %><br>
-          <%= not_nill(@tirelist,"tire6depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire6depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire6purchase") %>
+          <%= not_nill(@tirelist, "tire6sn") %><br>
+          <%= not_nill(@tirelist, "tire6depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire6depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire6purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire7sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire7sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire7sn") %><br>
-          <%= not_nill(@tirelist,"tire7depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire7depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire7purchase") %>
+          <%= not_nill(@tirelist, "tire7sn") %><br>
+          <%= not_nill(@tirelist, "tire7depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire7depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire7purchase") %>
       </li>
       <% end %>
       <% if @truck.wheels >= 10 %>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire8sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire8sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire8sn") %><br>
-          <%= not_nill(@tirelist,"tire8depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire8depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire8purchase") %>
+          <%= not_nill(@tirelist, "tire8sn") %><br>
+          <%= not_nill(@tirelist, "tire8depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire8depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire8purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire9sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire9sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire9sn") %><br>
-          <%= not_nill(@tirelist,"tire9depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire9depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire9purchase") %>
+          <%= not_nill(@tirelist, "tire9sn") %><br>
+          <%= not_nill(@tirelist, "tire9depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire9depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire9purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire10sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire10sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire10sn") %><br>
-          <%= not_nill(@tirelist,"tire10depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire10depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire10purchase") %>
+          <%= not_nill(@tirelist, "tire10sn") %><br>
+          <%= not_nill(@tirelist, "tire10depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire10depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire10purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire11sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire11sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire11sn") %><br>
-          <%= not_nill(@tirelist,"tire11depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire11depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire11purchase") %>
+          <%= not_nill(@tirelist, "tire11sn") %><br>
+          <%= not_nill(@tirelist, "tire11depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire11depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire11purchase") %>
       </li>
       <% end %>
     </ul>
     
     <ul>
-      <li><%= adhoc_lasttire(@truck, 3) %></li>
-      <% @tirelist =  get_adhoctire_data(@truck, 3) %>
+      <li class="text-center bg-info"><%= adhoc_lasttire(@truck, 3) %></li>
+      <% @tirelist = get_adhoctire_data(@truck, 3) %>
       <% prevtirelist = get_adhoctire_data(@truck, 2) %>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire1sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire1sn") ? "bgwhite" : "bgpink" %>
      <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire1sn") %><br>
-          <%= not_nill(@tirelist,"tire1depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire1depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire1purchase") %>
+          <%= not_nill(@tirelist, "tire1sn") %><br>
+          <%= not_nill(@tirelist, "tire1depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire1depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire1purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire2sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire2sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire2sn") %><br>
-          <%= not_nill(@tirelist,"tire2depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire2depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire2purchase") %>
+          <%= not_nill(@tirelist, "tire2sn") %><br>
+          <%= not_nill(@tirelist, "tire2depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire2depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire2purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire3sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire3sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire3sn") %><br>
-          <%= not_nill(@tirelist,"tire3depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire3depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire3purchase") %>
+          <%= not_nill(@tirelist, "tire3sn") %><br>
+          <%= not_nill(@tirelist, "tire3depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire3depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire3purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire4sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire4sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire4sn") %><br>
-          <%= not_nill(@tirelist,"tire4depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire4depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire4purchase") %>
+          <%= not_nill(@tirelist, "tire4sn") %><br>
+          <%= not_nill(@tirelist, "tire4depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire4depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire4purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire5sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire5sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire5sn") %><br>
-          <%= not_nill(@tirelist,"tire5depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire5depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire5purchase") %>
+          <%= not_nill(@tirelist, "tire5sn") %><br>
+          <%= not_nill(@tirelist, "tire5depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire5depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire5purchase") %>
       </li>
       <% if @truck.wheels >= 6 %>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire6sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire6sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire6sn") %><br>
-          <%= not_nill(@tirelist,"tire6depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire6depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire6purchase") %>
+          <%= not_nill(@tirelist, "tire6sn") %><br>
+          <%= not_nill(@tirelist, "tire6depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire6depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire6purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire7sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire7sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire7sn") %><br>
-          <%= not_nill(@tirelist,"tire7depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire7depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire7purchase") %>
+          <%= not_nill(@tirelist, "tire7sn") %><br>
+          <%= not_nill(@tirelist, "tire7depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire7depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire7purchase") %>
       </li>
       <% end %>
       <% if @truck.wheels >= 10 %>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire8sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire8sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire8sn") %><br>
-          <%= not_nill(@tirelist,"tire8depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire8depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire8purchase") %>
+          <%= not_nill(@tirelist, "tire8sn") %><br>
+          <%= not_nill(@tirelist, "tire8depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire8depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire8purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire9sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire9sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire9sn") %><br>
-          <%= not_nill(@tirelist,"tire9depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire9depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire9purchase") %>
+          <%= not_nill(@tirelist, "tire9sn") %><br>
+          <%= not_nill(@tirelist, "tire9depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire9depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire9purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire10sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire10sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire10sn") %><br>
-          <%= not_nill(@tirelist,"tire10depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire10depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire10purchase") %>
+          <%= not_nill(@tirelist, "tire10sn") %><br>
+          <%= not_nill(@tirelist, "tire10depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire10depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire10purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire11sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire11sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire11sn") %><br>
-          <%= not_nill(@tirelist,"tire11depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire11depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire11purchase") %>
+          <%= not_nill(@tirelist, "tire11sn") %><br>
+          <%= not_nill(@tirelist, "tire11depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire11depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire11purchase") %>
       </li>
       <% end %>
     </ul>
     
     <ul>
-      <li><%= adhoc_lasttire(@truck, 4) %></li>
-      <% @tirelist =  get_adhoctire_data(@truck, 4) %>
+      <li class="text-center bg-info"><%= adhoc_lasttire(@truck, 4) %></li>
+      <% @tirelist = get_adhoctire_data(@truck, 4) %>
       <% prevtirelist = get_adhoctire_data(@truck, 3) %>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire1sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire1sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire1sn") %><br>
-          <%= not_nill(@tirelist,"tire1depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire1depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire1purchase") %>
+          <%= not_nill(@tirelist, "tire1sn") %><br>
+          <%= not_nill(@tirelist, "tire1depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire1depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire1purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire2sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire2sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire2sn") %><br>
-          <%= not_nill(@tirelist,"tire2depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire2depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire2purchase") %>
+          <%= not_nill(@tirelist, "tire2sn") %><br>
+          <%= not_nill(@tirelist, "tire2depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire2depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire2purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire3sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire3sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire3sn") %><br>
-          <%= not_nill(@tirelist,"tire3depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire3depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire3purchase") %>
+          <%= not_nill(@tirelist, "tire3sn") %><br>
+          <%= not_nill(@tirelist, "tire3depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire3depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire3purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire4sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire4sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire4sn") %><br>
-          <%= not_nill(@tirelist,"tire4depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire4depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire4purchase") %>
+          <%= not_nill(@tirelist, "tire4sn") %><br>
+          <%= not_nill(@tirelist, "tire4depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire4depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire4purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire5sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire5sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire5sn") %><br>
-          <%= not_nill(@tirelist,"tire5depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire5depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire5purchase") %>
+          <%= not_nill(@tirelist, "tire5sn") %><br>
+          <%= not_nill(@tirelist, "tire5depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire5depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire5purchase") %>
       </li>
       <% if @truck.wheels >= 6 %>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire6sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire6sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire6sn") %><br>
-          <%= not_nill(@tirelist,"tire6depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire6depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire6purchase") %>
+          <%= not_nill(@tirelist, "tire6sn") %><br>
+          <%= not_nill(@tirelist, "tire6depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire6depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire6purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire7sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire7sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire7sn") %><br>
-          <%= not_nill(@tirelist,"tire7depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire7depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire7purchase") %>
+          <%= not_nill(@tirelist, "tire7sn") %><br>
+          <%= not_nill(@tirelist, "tire7depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire7depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire7purchase") %>
       </li>
       <% end %>
       <% if @truck.wheels >= 10 %>
 
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire8sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire8sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire8sn") %><br>
-          <%= not_nill(@tirelist,"tire8depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire8depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire8purchase") %>
+          <%= not_nill(@tirelist, "tire8sn") %><br>
+          <%= not_nill(@tirelist, "tire8depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire8depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire8purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire9sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire9sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire9sn") %><br>
-          <%= not_nill(@tirelist,"tire9depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire9depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire9purchase") %>
+          <%= not_nill(@tirelist, "tire9sn") %><br>
+          <%= not_nill(@tirelist, "tire9depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire9depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire9purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire10sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire10sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire10sn") %><br>
-          <%= not_nill(@tirelist,"tire10depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire10depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire10purchase") %>
+          <%= not_nill(@tirelist, "tire10sn") %><br>
+          <%= not_nill(@tirelist, "tire10depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire10depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire10purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire11sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire11sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire11sn") %><br>
-          <%= not_nill(@tirelist,"tire11depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire11depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire11purchase") %>
+          <%= not_nill(@tirelist, "tire11sn") %><br>
+          <%= not_nill(@tirelist, "tire11depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire11depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire11purchase") %>
       </li>
       <% end %>
     </ul> 
     
     <ul>
-      <li><%= adhoc_lasttire(@truck, 5) %></li>
-      <% @tirelist =  get_adhoctire_data(@truck, 5) %>
+      <li class="text-center bg-info"><%= adhoc_lasttire(@truck, 5) %></li>
+      <% @tirelist = get_adhoctire_data(@truck, 5) %>
       <% prevtirelist = get_adhoctire_data(@truck, 4) %>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire1sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire1sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire1sn") %><br>
-          <%= not_nill(@tirelist,"tire1depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire1depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire1purchase") %>
+          <%= not_nill(@tirelist, "tire1sn") %><br>
+          <%= not_nill(@tirelist, "tire1depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire1depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire1purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire2sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire2sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire2sn") %><br>
-          <%= not_nill(@tirelist,"tire2depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire2depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire2purchase") %>
+          <%= not_nill(@tirelist, "tire2sn") %><br>
+          <%= not_nill(@tirelist, "tire2depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire2depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire2purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire3sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire3sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire3sn") %><br>
-          <%= not_nill(@tirelist,"tire3depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire3depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire3purchase") %>
+          <%= not_nill(@tirelist, "tire3sn") %><br>
+          <%= not_nill(@tirelist, "tire3depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire3depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire3purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire4sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire4sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire4sn") %><br>
-          <%= not_nill(@tirelist,"tire4depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire4depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire4purchase") %>
+          <%= not_nill(@tirelist, "tire4sn") %><br>
+          <%= not_nill(@tirelist, "tire4depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire4depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire4purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire5sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire5sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire5sn") %><br>
-          <%= not_nill(@tirelist,"tire5depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire5depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire5purchase") %>
+          <%= not_nill(@tirelist, "tire5sn") %><br>
+          <%= not_nill(@tirelist, "tire5depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire5depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire5purchase") %>
       </li>
       <% if @truck.wheels >= 6 %>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire6sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire6sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire6sn") %><br>
-          <%= not_nill(@tirelist,"tire6depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire6depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire6purchase") %>
+          <%= not_nill(@tirelist, "tire6sn") %><br>
+          <%= not_nill(@tirelist, "tire6depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire6depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire6purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire7sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire7sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire7sn") %><br>
-          <%= not_nill(@tirelist,"tire7depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire7depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire7purchase") %>
+          <%= not_nill(@tirelist, "tire7sn") %><br>
+          <%= not_nill(@tirelist, "tire7depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire7depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire7purchase") %>
       </li>
       <% end %>
       <% if @truck.wheels >= 10 %>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire8sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire8sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire8sn") %><br>
-          <%= not_nill(@tirelist,"tire8depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire8depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire8purchase") %>
+          <%= not_nill(@tirelist, "tire8sn") %><br>
+          <%= not_nill(@tirelist, "tire8depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire8depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire8purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire9sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire9sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire9sn") %><br>
-          <%= not_nill(@tirelist,"tire9depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire9depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire9purchase") %>
+          <%= not_nill(@tirelist, "tire9sn") %><br>
+          <%= not_nill(@tirelist, "tire9depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire9depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire9purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire10sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire10sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire10sn") %><br>
-          <%= not_nill(@tirelist,"tire10depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire10depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire10purchase") %>
+          <%= not_nill(@tirelist, "tire10sn") %><br>
+          <%= not_nill(@tirelist, "tire10depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire10depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire10purchase") %>
       </li>
-      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire11sn") ? "bgwhite": "bgpink" %>
+      <% displayclass = check_replaced(prevtirelist, @tirelist, "tire11sn") ? "bgwhite" : "bgpink" %>
       <li class="<%= displayclass %>">
-          <%= not_nill(@tirelist,"tire11sn") %><br>
-          <%= not_nill(@tirelist,"tire11depthside") %>mm<br>
-          <%= not_nill(@tirelist,"tire11depthmiddle") %>mm<br>
-          <%= not_nill(@tirelist,"tire11purchase") %>
+          <%= not_nill(@tirelist, "tire11sn") %><br>
+          <%= not_nill(@tirelist, "tire11depthside") %>mm<br>
+          <%= not_nill(@tirelist, "tire11depthmiddle") %>mm<br>
+          <%= not_nill(@tirelist, "tire11purchase") %>
       </li>
       <% end %>
     </ul>
@@ -458,11 +458,11 @@
   <div class="col-xs-4">
     
     <% if @truck.wheels == 10 %>
-       <%= render 'truckfig10' %>
+       <%= render "truckfig10" %>
     <% elsif @truck.wheels == 6 %>
-       <%= render 'truckfig6' %>
+       <%= render "truckfig6" %>
     <% elsif @truck.wheels == 4 %>
-       <%= render 'truckfig4' %>
+       <%= render "truckfig4" %>
     <% end %>
     
     

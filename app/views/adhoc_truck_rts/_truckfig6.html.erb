@@ -1,7 +1,7 @@
 <table class="table" id="truck_fig">
     
     <% rotation_count = @truck.adhocTruckRts.count %>
-    <% @tirelist =  get_adhoctire_data(@truck, rotation_count) %>
+    <% @tirelist = get_adhoctire_data(@truck, rotation_count) %>
     <tbody>
     <tr>
         <td>&nbsp;</td>
@@ -23,16 +23,16 @@
 
     <tr>
         <td>&nbsp;</td>
-        <td class="tb-left tb-right"><%= not_nill(@tirelist,"tire1sn") %></td>
+        <td class="tb-left tb-right bg-tiregrey"><%= not_nill(@tirelist, "tire1sn") %></td>
         <td colspan="2">&nbsp;</td>
-        <td class="tb-left tb-right"><%= not_nill(@tirelist,"tire2sn") %></td>
+        <td class="tb-left tb-right bg-tiregrey"><%= not_nill(@tirelist, "tire2sn") %></td>
         <td>&nbsp;</td>
     </tr>
     <tr>
         <td>&nbsp;</td>
-        <td class="tb-left tb-right"></td>
+        <td class="tb-left tb-right bg-tiregrey"></td>
         <td colspan="2">&nbsp;</td>
-        <td class="tb-left tb-right"></td>
+        <td class="tb-left tb-right bg-tiregrey"></td>
         <td>&nbsp;</td>
     </tr>
     <tr>
@@ -55,11 +55,11 @@
         <td class="tb-top tb-left tb-right center">F</td>
     </tr>
     <tr>
-        <td class="tb-left tb-right"><%= not_nill(@tirelist,"tire3sn") %></td>
-        <td class="tb-left tb-right"><%= not_nill(@tirelist,"tire4sn") %></td>
-        <td colspan="2"><%= not_nill(@tirelist,"tire7sn") %></td>
-        <td class="tb-left tb-right"><%= not_nill(@tirelist,"tire5sn") %></td>
-        <td class="tb-left tb-right"><%= not_nill(@tirelist,"tire6sn") %></td>
+        <td class="tb-left tb-right bg-tiregrey"><%= not_nill(@tirelist, "tire3sn") %></td>
+        <td class="tb-left tb-right bg-tiregrey"><%= not_nill(@tirelist, "tire4sn") %></td>
+        <td colspan="2" class="bg-tiregrey"><%= not_nill(@tirelist, "tire7sn") %></td>
+        <td class="tb-left tb-right bg-tiregrey"><%= not_nill(@tirelist, "tire5sn") %></td>
+        <td class="tb-left tb-right bg-tiregrey"><%= not_nill(@tirelist, "tire6sn") %></td>
     </tr>
     <tr>
         <td class="tb-bottom tb-left tb-right">&nbsp;</td>

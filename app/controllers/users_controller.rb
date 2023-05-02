@@ -24,7 +24,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to @user, notice: "登録完了"
+      session[:admin_id] = nil
+      redirect_to @user, notice: "Regist Done"
     else
       @companies = Company.preload(:branches)
       @branches =  (@user != nil) ? Branch.where(company_id: @user.company_id) : {}

@@ -17,19 +17,7 @@ Rails.application.routes.draw do
   post 'createadmin', to: "admin#createadmin"
   get  'admin_setuser', to: "admin#setuser"
   
-  
-  get 'tireadmin', to: 'tireadmins#new'
-  post 'tireadmin', to: 'tireadmins#create'
-  delete 'tireadmin', to: 'tireadmins#destroy'
-  get  'tireadminpanel/:id',  to: "tireadmins#list", as: 'tireadminpanel'
-  get  'newtireadmin', to: "admin#newtireadmin"
-  post 'createtireadmin', to: "admin#createtireadmin"
-  get  'edittireadmin/:id', to: "admin#edittireadmin", as: "edittireadmin"
-  put  'updatetireadmin/:id', to: "admin#updatetireadmin"
-  patch  'updatetireadmin/:id', to: "admin#updatetireadmin", as: "updatetireadmin"
-  get   'listtireadmin', to: "admin#listtireadmin"
-  delete 'deletetireadmin/:id', to: "admin#deletetireadmin", as: 'deletetireadmin'
-  
+
   
   get 'new/trackhistories'
   
@@ -64,6 +52,19 @@ Rails.application.routes.draw do
     end
   end
   
+    
+  get  'tireadminpanel/:id',  to: "tireadmins#list", as: 'tireadminpanel'
+  get  'newtireadmin', to: "admin#newtireadmin"
+  post 'createtireadmin', to: "admin#createtireadmin"
+  get  'edittireadmin/:id', to: "admin#edittireadmin", as: "edittireadmin"
+  put  'updatetireadmin/:id', to: "admin#updatetireadmin"
+  patch  'updatetireadmin/:id', to: "admin#updatetireadmin", as: "updatetireadmin"
+  get   'listtireadmin', to: "admin#listtireadmin"
+  delete 'deletetireadmin/:id', to: "admin#deletetireadmin", as: 'deletetireadmin'
+  #delete 'tireadmin', to: 'tireadmins#destroy'
+  #get  'tireadminpanel/:id',  to: "tireadmins#list", as: 'tireadminpanel'
+  get  'tireadmin', to: "tireadmins#new"
+  post 'tireadmin', to: "tireadmins#create"
   resources :tireadmins do
     member do
       get 'dashboard'
