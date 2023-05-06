@@ -48,7 +48,13 @@ class TrailersController < ApplicationController
   end  
   
   def index
-    @trailers = Trailer.all.order(:company_id).order(:branch_id).order(:wheels).order(:vehicleid).page(params[:page])
+    @companies = Company.all
+    if (params[:company])
+      @target_c = @companies.find(params[:company])
+    else
+      @target_c = @companies.first
+    end
+    @trailers = Trailer.where(company_id: @target_c).order(:company_id).order(:branch_id).order(:wheels).order(:vehicleid).page(params[:page])
   end
   
   def destroy

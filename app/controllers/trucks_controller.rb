@@ -1,7 +1,16 @@
 class TrucksController < ApplicationController
+  
+  before_action :adminlogged_in_user, only:[:new]
 
   def index
-    @trucks = Truck.all.order(:company_id, :branch_id)
+    @companies = Company.all
+    if (params[:company])
+      @target_c = @companies.find(params[:company])
+    else
+      @target_c = @companies.first
+    end
+    @trucks = Truck.where(company_id: @target_c).order(:company_id, :branch_id, :number)
+    
   end
   
   def all

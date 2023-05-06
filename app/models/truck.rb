@@ -25,7 +25,9 @@ class Truck < ActiveRecord::Base
   validates :wheels,    presence: true, numericality: { only_integer: true }
   validates :engine,    presence: true, length: { maximum: 20 }
   validates :vehicleid, presence: true, length: { maximum: 10 }
-  validates :number,    presence: true, length: { maximum: 10 }
+  validates :number,    presence: true, length: { maximum: 10 },
+                        uniqueness: { case_sensitive: false }
+                        
   validates :e_oil,     presence: true, numericality: { only_integer: true }
   validates :tm_oil,    presence: true, numericality: { only_integer: true }
   validates :df_oil,    presence: true, numericality: { only_integer: true }

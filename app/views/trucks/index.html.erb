@@ -1,3 +1,20 @@
+<% if @companies.any? %>
+<%= render 'layouts/backtoadmin' %>
+<div class="row mb-2">
+    <% @companies.each do |e| %>
+       <div class="col-xs-3">
+            <% btc = @target_c.id == e.id ? "btn-warning" : "btn-danger" %>
+        
+            <div class="col-2 mb-1">
+                <%= link_to  e.name_e.truncate(22),
+                    trucks_path(company: e.id),
+                    class: "btn #{btc} btn-block" %>
+             </div> 
+        </div>
+    <% end %>
+</div>
+<% end %>
+<hr>
 <table class="table table-responsive logiccs_table">
 <% @trucks.each do |truck| %>
    <tr>
