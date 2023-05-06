@@ -1,3 +1,23 @@
+<%= render 'layouts/backtoadmin' %>
+<h2>Approver List</h2>
+
+<% if @companies.any? %>
+<div class="row mb-2">
+    <% @companies.each do |e| %>
+       <div class="col-xs-3">
+            <% btc = @target_c.id == e.id ? "btn-warning" : "btn-danger" %>
+        
+            <div class="col-2 mb-1">
+                <%= link_to  e.name_e.truncate(22),
+                    approvers_path(company: e.id),
+                    class: "btn #{btc} btn-block" %>
+             </div> 
+        </div>
+    <% end %>
+</div>
+<% end %>
+<hr>
+
 <div class="row">
  <div class="col-md-10 col-md-offset-1 table-responsive">
      <table class="table table-striped table-bordered table-hover">
@@ -12,7 +32,7 @@
         </thead>
         <tbody>
             <% @approvers.each do |user| %>
-                <tr>
+                <tr class="bgwhite">
                     <td> <%= user.id %></td>
                     <td> <%= user.company.name_e %></td>
                     <td> <%= user.name %></td>

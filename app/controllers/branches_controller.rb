@@ -58,7 +58,13 @@ class BranchesController < ApplicationController
     end
     
     def index
-        @branch = Branch.all.order("created_at ASC")
+      @companies = Company.all
+      if (params[:company])
+        @target_c = @companies.find(params[:company])
+      else
+        @target_c = @companies.first
+      end
+      @branch = Branch.where(companY_id: @target_c).order("created_at ASC")
     end
     
     def destroy

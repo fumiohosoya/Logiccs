@@ -1,13 +1,6 @@
 Rails.application.routes.draw do
   
-  get 'logithreads/create'
-
-  get 'logithreads/index'
-
-  get 'logithreads/destroy'
-
-  get 'logiposts/index'
-
+#follow 3 lines for admin loginsession  
   get  'admin', to: 'admin#new'
   post 'admin', to: 'admin#create'
   delete 'admin', to: 'admin#destroy'
@@ -16,6 +9,13 @@ Rails.application.routes.draw do
   get  'newadmin', to: "admin#newadmin"
   post 'createadmin', to: "admin#createadmin"
   get  'admin_setuser', to: "admin#setuser"
+  get  'listadmin', to: "admin#listadmin"
+  resources :admin do 
+    member do
+      delete "destroyadmin"
+    end
+  end
+    
   
 
   

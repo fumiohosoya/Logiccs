@@ -1,6 +1,24 @@
-<h2>部品費用一覧</h2>
+<%= render 'layouts/backtoadmin' %>
 
-<%= link_to "新規追加", new_partscost_path, class:'btn btn-primary' %>
+<h2>Parts Cost Entry List</h2>
+
+<% if @companies.any? %>
+<div class="row mb-2">
+    <% @companies.each do |e| %>
+       <div class="col-xs-3">
+            <% btc = @target_c.id == e.id ? "btn-warning" : "btn-danger" %>
+        
+            <div class="col-2 mb-1">
+                <%= link_to  e.name_e.truncate(22),
+                    partscosts_path(company: e.id),
+                    class: "btn #{btc} btn-block" %>
+             </div> 
+        </div>
+    <% end %>
+</div>
+<% end %>
+<hr>
+<%= link_to "Add New Entry", new_partscost_path, class:'btn btn-primary' %>
 <table class="table table-responsive logiccs_table table-bordered">
     <thead>
         <tr>
@@ -19,7 +37,7 @@
             <td>
                 <%= link_to "edit", edit_partscost_path(cost), class:'btn btn-xs btn-primary' %>
                 |
-                <%= link_to "delete", cost, method: :delete, class:'btn btn-xs btn-primary',  data: { confirm: "You sure?" } %>
+                <%= link_to "delete", cost, method: :delete, class:'btn btn-xs btn-danger',  data: { confirm: "You sure?" } %>
             </td>
         </tr>
         <% end %>

@@ -1,15 +1,30 @@
 <%= render 'layouts/backtoadmin' %>
-
-<h2>登録支店一覧</h2>
+<% if @companies.any? %>
+<div class="row mb-2">
+    <% @companies.each do |e| %>
+       <div class="col-xs-3">
+            <% btc = @target_c.id == e.id ? "btn-warning" : "btn-danger" %>
+        
+            <div class="col-2 mb-1">
+                <%= link_to  e.name_e.truncate(22),
+                    branches_path(company: e.id),
+                    class: "btn #{btc} btn-block" %>
+             </div> 
+        </div>
+    <% end %>
+</div>
+<% end %>
+<hr>
+<h2>Branch Entry List</h2>
 <div class="row">
  <div class=" col-xs-offset-2 col-xs-8">
    <table class="table table-striped table-bordered table-hover">
      <thead>
          <tr>
          <th class="logiccs_table">ID</th>
-         <th class="logiccs_table">会社名</th>
-         <th class="logiccs_table">支店名</th>
-         <th colspan="2" class="logiccs_table">オペレーション</th>
+         <th class="logiccs_table">Company</th>
+         <th class="logiccs_table">Branch</th>
+         <th colspan="2" class="logiccs_table">Operation</th>
          </tr>
      </thead> 
     <% @branch.each do |b| %>

@@ -1,8 +1,16 @@
 class ApproversController < ApplicationController
     
+    before_action :adminlogged_in_user
+    
     
     def index
-        @approvers = Approver.all
+        @companies = Company.all
+        if (params[:company])
+          @target_c = @companies.find(params[:company])
+        else
+          @target_c = @companies.first
+        end        
+        @approvers = Approver.where(company_id: @target_c).order(:name)
     end
     
     def new

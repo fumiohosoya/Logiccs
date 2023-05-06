@@ -1,6 +1,10 @@
 class AdminController < ApplicationController
 
-  before_action :adminlogged_in_user, only:[:setuser, :destroy]
+  before_action :adminlogged_in_user, except: [:new, :create]
+  
+  def listadmin
+    @admins = Admin.all
+  end
 
   def new
      
@@ -29,6 +33,7 @@ class AdminController < ApplicationController
     @admin = Admin.new
   end
   
+  
   def createadmin
     @admin = Admin.new(admin_params)
     
@@ -39,6 +44,16 @@ class AdminController < ApplicationController
       flash[:error] = "Admin user failed to create"
       render 'newadmin'
     end
+  end
+  
+  def edit
+    @admin = Admin.find(params[:id])
+  end
+  
+  def destroyadmin
+    @admin = Admin.find(params[:id])
+    @admin.destroy if @admin
+    redirect_to adminpanel_url
   end
   
   def newtireadmin
@@ -80,7 +95,14 @@ class AdminController < ApplicationController
     
   
   def listtireadmin
-    @tireadmins = Tireadmin.order(:company_id, :branch_id)
+    
+    @companies = Company.all
+    if (params[:company])
+      @target_c = @companies.find(params[:company])
+    else
+      @target_c = @companies.first
+    end
+    @tireadmins = Tireadmin.where(company_id: @target_c).order(:company_id, :branch_id)
   end
   
   def deletetireadmin
@@ -93,8 +115,8 @@ class AdminController < ApplicationController
   
 
   def index
-      
   end
+  
 
   def setuser
     @users = User.all.includes(:company)

@@ -11,7 +11,13 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all.order(:company_id, :name)
+    @companies = Company.all
+    if (params[:company])
+      @target_c = @companies.find(params[:company])
+    else
+      @target_c = @companies.first
+    end
+    @users = User.where(company_id: @target_c).order(:company_id, :name)
   end
 
   def new

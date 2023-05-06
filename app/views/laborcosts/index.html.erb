@@ -1,5 +1,22 @@
-<h2>作業費用一覧</h2>
-<%= link_to "新規追加", new_laborcost_path, class:'btn btn-success' %>
+<%= render 'layouts/backtoadmin' %>
+<h2>Labor Cost Entry List</h2>
+<% if @companies.any? %>
+<div class="row mb-2">
+    <% @companies.each do |e| %>
+       <div class="col-xs-3">
+            <% btc = @target_c.id == e.id ? "btn-warning" : "btn-danger" %>
+        
+            <div class="col-2 mb-1">
+                <%= link_to  e.name_e.truncate(22),
+                    laborcosts_path(company: e.id),
+                    class: "btn #{btc} btn-block" %>
+             </div> 
+        </div>
+    <% end %>
+</div>
+<% end %>
+<hr>
+<%= link_to "Add New Entry", new_laborcost_path, class:'btn btn-success' %>
 <table class="table table-responsive logiccs_table table-bordered">
     <thead>
         <tr>
@@ -18,7 +35,7 @@
             <td>
                 <%= link_to "edit", edit_laborcost_path(cost), class:'btn btn-xs btn-success' %>
                 |
-                <%= link_to "delete", cost, method: :delete, data: { confirm: "You sure?" }, class:'btn btn-xs btn-success' %>
+                <%= link_to "delete", cost, method: :delete, data: { confirm: "You sure?" }, class:'btn btn-xs btn-danger' %>
             </td>
         </tr>
         <% end %>

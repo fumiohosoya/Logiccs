@@ -2,7 +2,12 @@ class LaborcostsController < ApplicationController
 
 def index
     @companies = Company.all
-    @costs = Laborcost.all.order(:company_id, :model)
+    if (params[:company])
+      @target_c = @companies.find(params[:company])
+    else
+      @target_c = @companies.first
+    end
+    @costs = Laborcost.where(company_id: @target_c).order(:company_id, :model)
 end
 
 def new
