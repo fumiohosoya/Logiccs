@@ -126,6 +126,22 @@ class TrailersController < ApplicationController
     @trailer = Trailer.find(params[:id])
     wheels = @trailer.wheels
   end
+  
+  def all
+    @branch = Branch.find(params[:branch_id])
+    
+    if (@branch != nil)
+      @trailers = @branch.trailers.order("created_at ASC")
+      if (@trucks == nil) 
+        render json: { error: '404 error' }, status: 404
+      else
+        render json: @trailers
+      end
+    else
+        render json: { error: '404 error' }, status: 404
+    end
+    
+  end
 
     
 private

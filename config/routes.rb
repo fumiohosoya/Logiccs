@@ -100,6 +100,8 @@ Rails.application.routes.draw do
 
   resources :maintains
 
+  get     '/trailers/:branch_id/all', to: 'trailers#all'
+
   resources :trailers do
     member do
       get  'karte'
